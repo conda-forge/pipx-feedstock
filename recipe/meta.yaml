@@ -27,7 +27,7 @@ requirements:
     - python >=3.6
     - colorama >=0.4.4
     - userpath >=1.6.0
-    - argcomplete >=1.9.4,<2.0
+    - argcomplete >=1.9.4
     - packaging >=20.0
     - importlib-metadata >=3.3.0
 
