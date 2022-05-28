@@ -23,13 +23,13 @@ requirements:
     - pip
     - python >=3.6
   run:
-    # https://github.com/pypa/pipx/blob/main/setup.cfg
+    # https://github.com/pypa/pipx/blob/{{ version }}/pyproject.toml
     - python >=3.6
-    - colorama >=0.4.4
-    - userpath >=1.6.0
     - argcomplete >=1.9.4
-    - packaging >=20.0
+    - colorama >=0.4.4
     - importlib-metadata >=3.3.0
+    - packaging >=20.0
+    - userpath >=1.6.0
 
 test:
   imports:
