@@ -22,6 +22,7 @@ requirements:
   host:
     - pip
     - python >=3.6
+    - hatchling >=0.15.0
   run:
     # https://github.com/pypa/pipx/blob/{{ version }}/pyproject.toml
     - python >=3.6
