@@ -11,8 +11,7 @@ source:
   sha256: 4d2f70daf15f121e90b7394b0730ee82fc39d7da514e50a7bbf8066be88883bb
 
 build:
-  number: 0
-  noarch: python
+  number: 1
 
   entry_points:
     - pipx = pipx.main:cli
@@ -21,13 +20,13 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python
     - hatchling >=0.15.0
   run:
     # https://github.com/pypa/pipx/blob/{{ version }}/pyproject.toml
-    - python >=3.6
+    - python
     - argcomplete >=1.9.4
-    - colorama >=0.4.4
+    - colorama >=0.4.4  # [win]
     - importlib-metadata >=3.3.0
     - packaging >=20.0
     - userpath >=1.6.0
