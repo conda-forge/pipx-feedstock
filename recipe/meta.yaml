@@ -11,6 +11,7 @@ source:
   sha256: 4d2f70daf15f121e90b7394b0730ee82fc39d7da514e50a7bbf8066be88883bb
 
 build:
+  noarch: python
   number: 4
 
   entry_points:
