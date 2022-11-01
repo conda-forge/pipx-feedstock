@@ -21,13 +21,13 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >=3.7
     - hatchling >=0.15.0
   run:
     # https://github.com/pypa/pipx/blob/{{ version }}/pyproject.toml
-    - python
+    - python >=3.7
     - argcomplete >=1.9.4
-    - colorama >=0.4.4  # [win]
+    - colorama >=0.4.4
     - importlib-metadata >=3.3.0
     - packaging >=20.0
     - userpath >=1.6.0
