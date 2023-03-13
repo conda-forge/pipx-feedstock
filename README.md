@@ -1,11 +1,11 @@
-About pipx
-==========
+About pipx-feedstock
+====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pipx-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/pypa/pipx
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pipx-feedstock/blob/main/LICENSE.txt)
 
 Summary: Install and Run Python Applications in Isolated Environments
 
