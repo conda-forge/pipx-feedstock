@@ -1,5 +1,5 @@
 {% set name = "pipx" %}
-{% set version = "1.4.1" %}
+{% set version = "1.4.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pipx-{{ version }}.tar.gz
-  sha256: ccb78fa8dc4ae91f1e8d7c6f04d47a29fa045d312cd37c2b0bcc74dd8353b675
+  sha256: 0bead3cbb52674f1b8caa1c04334d6e25aa6c40280b89235bb1f01c20ef1e275
 
 build:
   noarch: python
