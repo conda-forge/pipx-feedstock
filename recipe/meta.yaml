@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pipx-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pipx-{{ version }}.tar.gz
   sha256: 762de134e16a462be92645166d225ecef446afaef534917f5f70008d63584360
 
 build:
   noarch: python
-  number: 0
+  number: 1
 
   entry_points:
     - pipx = pipx.main:cli
@@ -19,12 +19,12 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - hatch-vcs >=0.4
     - hatchling >=1.18
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - argcomplete >=1.9.4
     - colorama >=0.4.4
     - packaging >=20
@@ -41,6 +41,7 @@ test:
     - pipx --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/pypa/pipx
