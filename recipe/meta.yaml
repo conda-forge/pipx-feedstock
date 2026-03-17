@@ -1,5 +1,5 @@
 {% set name = "pipx" %}
-{% set version = "1.8.0" %}
+{% set version = "1.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pipx-{{ version }}.tar.gz
-  sha256: 61a653ef2046de67c3201306b9d07428e93c80e6bebdcbbcb8177ecf3328b403
+  sha256: b7a82e09ea61fadcdbdea1f9bb49a22aa8a327d1986c97e06123a42961319c4c
 
 build:
   noarch: python
@@ -30,7 +30,7 @@ requirements:
     - packaging >=20
     - platformdirs >=2.1
     - tomli
-    - userpath !=1.9,>=1.6
+    - userpath >=1.6,!=1.9
 
 test:
   imports:
