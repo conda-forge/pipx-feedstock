@@ -1,5 +1,5 @@
 {% set name = "pipx" %}
-{% set version = "1.14.0" %}
+{% set version = "1.16.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pipx-{{ version }}.tar.gz
-  sha256: 6566e35e64292d1df8a2e3c7ab51093521201cf7a9ed2f23217e5f843aad05b8
+  sha256: 358ed1c707a2dbaeb6e7e8786aa12bc2808887bbdbfbece6c5a808b525701fb8
 
 build:
   noarch: python
@@ -24,11 +24,12 @@ requirements:
     - hatchling >=1.27
     - pip
   run:
+    - filelock >=3.16
     - python >={{ python_min }}
     - argcomplete >=1.9.4
     - colorama >=0.4.4
     - packaging >=20
-    - platformdirs >=2.1
+    - platformdirs >=4.6
     - tomli
     - userpath >=1.6,!=1.9
 
