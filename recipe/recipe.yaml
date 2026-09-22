@@ -1,16 +1,15 @@
 schema_version: 1
 
 context:
-  name: pipx
-  version: "1.14.0"
+  version: 1.17.5
 
 package:
-  name: ${{ name|lower }}
+  name: pipx
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pipx-${{ version }}.tar.gz
-  sha256: 6566e35e64292d1df8a2e3c7ab51093521201cf7a9ed2f23217e5f843aad05b8
+- url: https://files.pythonhosted.org/packages/source/p/pipx/pipx-${{ version }}.tar.gz
+  sha256: b18606c312f50d57d2fb1168e0d8e82cd86d831d83bdd13318f2d07ed1ddc34e
 
 build:
   number: 0
@@ -26,11 +25,14 @@ requirements:
     - hatch-vcs >=0.4
     - hatchling >=1.27
     - pip
+    - docutils >=0.21
   run:
     - python >=${{ python_min }}
     - argcomplete >=1.9.4
     - colorama >=0.4.4
-    - packaging >=20
+    - platformdirs >=4.6
+    - packaging >=26
+    - filelock >=3.16
     - platformdirs >=2.1
     - tomli
     - userpath >=1.6,!=1.9
