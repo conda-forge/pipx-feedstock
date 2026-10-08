@@ -1,0 +1,65 @@
+schema_version: 1
+
+context:
+  version: 1.17.12
+
+package:
+  name: pipx
+  version: ${{ version }}
+
+source:
+- url: https://files.pythonhosted.org/packages/source/p/pipx/pipx-${{ version }}.tar.gz
+  sha256: 91f9381e7b218ff84b0cdeb79b0b6b4a014e374170a92b5550baba84e212d34a
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - pipx = pipx.main:cli
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatch-vcs >=0.4
+    - hatchling >=1.27
+    - pip
+    - docutils >=0.21
+  run:
+    - python >=${{ python_min }}
+    - argcomplete >=1.9.4
+    - colorama >=0.4.4
+    - platformdirs >=4.6
+    - packaging >=26
+    - filelock >=3.16
+    - platformdirs >=2.1
+    - tomli
+    - userpath >=1.6,!=1.9
+
+tests:
+  - python:
+      imports:
+        - pipx
+        - pipx.commands
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - '*'
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - pipx --help
+
+about:
+  summary: Install and Run Python Applications in Isolated Environments
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/pypa/pipx
+
+extra:
+  recipe-maintainers:
+    - maresb
+    - jsmolic
