@@ -1,15 +1,15 @@
 schema_version: 1
 
 context:
-  version: 1.17.12
+  version: 1.17.13
 
 package:
   name: pipx
   version: ${{ version }}
 
 source:
-- url: https://files.pythonhosted.org/packages/source/p/pipx/pipx-${{ version }}.tar.gz
-  sha256: 91f9381e7b218ff84b0cdeb79b0b6b4a014e374170a92b5550baba84e212d34a
+  - url: https://files.pythonhosted.org/packages/source/p/pipx/pipx-${{ version }}.tar.gz
+    sha256: ec93b158553ee68c0f49952435d07ddce0798ef11d12ccbe140e07d7c941671e
 
 build:
   number: 0
@@ -28,15 +28,12 @@ requirements:
     - docutils >=0.21
   run:
     - python >=${{ python_min }}
-    - argcomplete >=1.9.4
-    - colorama >=0.4.4
-    - platformdirs >=4.6
-    - packaging >=26
-    - filelock >=3.16
+    - argcomplete >=3.7.2
+    - platformdirs >=4.12.2
+    - packaging >=26.3
+    - filelock >=4.0.9
     - platformdirs >=2.1
-    - tomli
-    - userpath >=1.6,!=1.9
-
+    - userpath !=1.9,>=1.9.2
 tests:
   - python:
       imports:
