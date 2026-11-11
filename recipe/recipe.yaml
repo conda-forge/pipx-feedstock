@@ -22,10 +22,11 @@ build:
 requirements:
   host:
     - python ${{ python_min }}.*
-    - hatch-vcs >=0.4
-    - hatchling >=1.27
+    - hatch-vcs >=0.5
+    - hatchling >=1.32.4
     - pip
-    - docutils >=0.21
+    - docutils >=0.21.2
+    - hatch-fancy-pypi-readme >=25.1
   run:
     - python >=${{ python_min }}
     - argcomplete >=3.7.2
