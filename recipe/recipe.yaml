@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "1.18.16"
+  version: "1.18.17"
 
 package:
   name: pipx
@@ -9,7 +9,7 @@ package:
 
 source:
   - url: https://files.pythonhosted.org/packages/source/p/pipx/pipx-${{ version }}.tar.gz
-    sha256: 06795f5cd689f3ea36b574a7d1ddfc7b4c1ebee66116db7b70ded868f95d5057
+    sha256: aafe40c0e99e68584cf895855e01ed96d6347e9874c791d55ebb5bdde97c599b
 
 build:
   number: 0
