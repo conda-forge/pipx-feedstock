@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "1.18.17"
+  version: 1.18.18
 
 package:
   name: pipx
@@ -9,7 +9,7 @@ package:
 
 source:
   - url: https://files.pythonhosted.org/packages/source/p/pipx/pipx-${{ version }}.tar.gz
-    sha256: aafe40c0e99e68584cf895855e01ed96d6347e9874c791d55ebb5bdde97c599b
+    sha256: b9984a65ac07bb2f90e1fb121f40d7316c72e3ce178924e135bdb9ec4b9ddc76
 
 build:
   number: 0
@@ -35,7 +35,10 @@ requirements:
     - packaging >=26.3
     - filelock >=4.2
     - userpath !=1.9,>=1.9.2
-    - colorama >=0.4.6
+    # Upstream needs colorama on Windows only; we ship a single noarch build, so it's
+    # unconditional. Writing it as an expression stops the bot's grayskull update from
+    # removing it (noarch recipes may not use `if:` selectors).
+    - ${{ "colorama >=0.4.6" }}
 tests:
   - python:
       imports:
