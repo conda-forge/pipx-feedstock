@@ -35,6 +35,7 @@ requirements:
     - packaging >=26.3
     - filelock >=4.2
     - userpath !=1.9,>=1.9.2
+    - colorama >=0.4.6
 tests:
   - python:
       imports:
