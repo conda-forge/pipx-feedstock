@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "1.18.16"
+  version: "1.18.17"
 
 package:
   name: pipx
@@ -9,21 +9,22 @@ package:
 
 source:
   - url: https://files.pythonhosted.org/packages/source/p/pipx/pipx-${{ version }}.tar.gz
-    sha256: 06795f5cd689f3ea36b574a7d1ddfc7b4c1ebee66116db7b70ded868f95d5057
+    sha256: aafe40c0e99e68584cf895855e01ed96d6347e9874c791d55ebb5bdde97c599b
 
 build:
   number: 0
   noarch: python
-  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --check-build-dependencies
   python:
     entry_points:
-      - pipx = pipx.main:cli
+      - pipx = pipx.__main__:cli
 
 requirements:
   host:
     - python ${{ python_min }}.*
     - hatch-vcs >=0.5
     - hatchling >=1.32.4
+    - python-sbom >=0.1.2
     - pip
     - docutils >=0.21.2
     - hatch-fancy-pypi-readme >=25.1
@@ -34,6 +35,7 @@ requirements:
     - packaging >=26.3
     - filelock >=4.2
     - userpath !=1.9,>=1.9.2
+    - colorama >=0.4.6
 tests:
   - python:
       imports:
